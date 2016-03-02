@@ -5,8 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import javax.faces.model.SelectItem;
 import javax.faces.model.SelectItemGroup;
 import lombok.Data;
@@ -20,10 +22,9 @@ import org.buap.hospitalpuebla.service.ICitaService;
 public class CitaController implements Serializable {
 
     @EJB
-    private ICitaService citaEJB;
-    
-    private Cita cita;
+    private ICitaService citaService;
 
+    private Cita cita;
     private String especialidad;
     private List<SelectItem> doctores;
     private List<Cita> citas;
@@ -31,7 +32,7 @@ public class CitaController implements Serializable {
     @PostConstruct
     public void init() {
         cita = new Cita();
-        citas = citaEJB.findAll();
+        citas = citaService.findAll();
 
         SelectItemGroup cardeologia = new SelectItemGroup("Cardiologia");
         cardeologia.setSelectItems(new SelectItem[]{new SelectItem("Dr Gonzalez", "Dr. Gonzalez"), new SelectItem("Dr. Castillo", "Dr. Castillo")});
@@ -47,9 +48,9 @@ public class CitaController implements Serializable {
 
     public void registrar() {
         try {
-            citaEJB.create(cita);
+            citaService.create(cita);
             cita = new Cita();
-            citas = citaEJB.findAll();
+            citas = citaService.findAll();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -57,62 +58,20 @@ public class CitaController implements Serializable {
 
     public void eliminar(Cita cita) {
         try {
-            citaEJB.remove(cita);
+            citaService.remove(cita);
             cita = new Cita();
-            citas = citaEJB.findAll();
+            citas = citaService.findAll();
         } catch (Exception e) {
-
         }
     }
 
     public void leerID(Cita cita) {
         Cita citaTemp;
         try {
-            citaTemp = citaEJB.find(cita);
-        } catch (Exception ex) {
-
+            citaTemp = citaService.find(cita);
+        } catch (Exception e) {
         }
 
     }
-
-    /*public Cita getCita() {
-        return cita;
-    }
-
-    public void setCita(Cita cita) {
-        this.cita = cita;
-    }
-
-    public ICitaDAO getCitaEJB() {
-        return (ICitaDAO) citaEJB;
-    }
-
-    public void setCitaEJB(ICitaDAO citaEJB) {
-        this.citaEJB = (ICitaService) citaEJB;
-    }
-
-    public String getEspecialidad() {
-        return especialidad;
-    }
-
-    public void setEspecialidad(String especialidad) {
-        this.especialidad = especialidad;
-    }
-
-    public List<SelectItem> getDoctores() {
-        return doctores;
-    }
-
-    public void setDoctores(List<SelectItem> doctores) {
-        this.doctores = doctores;
-    }
-
-    public List<Cita> getCitas() {
-        return citas;
-    }
-
-    public void setCitas(List<Cita> citas) {
-        this.citas = citas;
-    }*/
 
 }

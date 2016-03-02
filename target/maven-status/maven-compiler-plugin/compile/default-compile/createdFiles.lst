@@ -1,6 +1,8 @@
+org\buap\hospitalpuebla\dao\impl\CitaDAOLocal.class
 org\buap\hospitalpuebla\controller\CitaController.class
 org\buap\hospitalpuebla\model\Cita.class
-org\buap\hospitalpuebla\ejb\CitaFacade.class
 org\buap\hospitalpuebla\model\Cita_.class
-org\buap\hospitalpuebla\ejb\AbstractFacade.class
-org\buap\hospitalpuebla\ejb\CitaFacadeLocal.class
+org\buap\hospitalpuebla\dao\ICitaDAO.class
+org\buap\hospitalpuebla\service\impl\CitaServiceLocal.class
+org\buap\hospitalpuebla\service\ICitaService.class
+org\buap\hospitalpuebla\dao\AbstractDAO.class

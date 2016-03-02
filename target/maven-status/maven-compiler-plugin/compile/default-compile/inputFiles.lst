@@ -1,5 +1,7 @@
+C:\Users\Ivan\Documents\CertificaTic\Workshops\Workshop 5 - Arquitectura de Aplicaciones Java Empresariales\BUAP\SistemaCitasHospital\src\main\java\org\buap\hospitalpuebla\dao\ICitaDAO.java
 C:\Users\Ivan\Documents\CertificaTic\Workshops\Workshop 5 - Arquitectura de Aplicaciones Java Empresariales\BUAP\SistemaCitasHospital\src\main\java\org\buap\hospitalpuebla\model\Cita.java
+C:\Users\Ivan\Documents\CertificaTic\Workshops\Workshop 5 - Arquitectura de Aplicaciones Java Empresariales\BUAP\SistemaCitasHospital\src\main\java\org\buap\hospitalpuebla\service\ICitaService.java
+C:\Users\Ivan\Documents\CertificaTic\Workshops\Workshop 5 - Arquitectura de Aplicaciones Java Empresariales\BUAP\SistemaCitasHospital\src\main\java\org\buap\hospitalpuebla\service\impl\CitaServiceLocal.java
 C:\Users\Ivan\Documents\CertificaTic\Workshops\Workshop 5 - Arquitectura de Aplicaciones Java Empresariales\BUAP\SistemaCitasHospital\src\main\java\org\buap\hospitalpuebla\controller\CitaController.java
-C:\Users\Ivan\Documents\CertificaTic\Workshops\Workshop 5 - Arquitectura de Aplicaciones Java Empresariales\BUAP\SistemaCitasHospital\src\main\java\org\buap\hospitalpuebla\ejb\CitaFacadeLocal.java
-C:\Users\Ivan\Documents\CertificaTic\Workshops\Workshop 5 - Arquitectura de Aplicaciones Java Empresariales\BUAP\SistemaCitasHospital\src\main\java\org\buap\hospitalpuebla\ejb\AbstractFacade.java
-C:\Users\Ivan\Documents\CertificaTic\Workshops\Workshop 5 - Arquitectura de Aplicaciones Java Empresariales\BUAP\SistemaCitasHospital\src\main\java\org\buap\hospitalpuebla\ejb\CitaFacade.java
+C:\Users\Ivan\Documents\CertificaTic\Workshops\Workshop 5 - Arquitectura de Aplicaciones Java Empresariales\BUAP\SistemaCitasHospital\src\main\java\org\buap\hospitalpuebla\dao\AbstractDAO.java
+C:\Users\Ivan\Documents\CertificaTic\Workshops\Workshop 5 - Arquitectura de Aplicaciones Java Empresariales\BUAP\SistemaCitasHospital\src\main\java\org\buap\hospitalpuebla\dao\impl\CitaDAOLocal.java

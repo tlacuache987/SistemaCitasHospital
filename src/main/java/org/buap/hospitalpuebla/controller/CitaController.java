@@ -9,15 +9,19 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.model.SelectItem;
 import javax.faces.model.SelectItemGroup;
-import org.buap.hospitalpuebla.ejb.CitaFacadeLocal;
+import lombok.Data;
+import org.buap.hospitalpuebla.dao.ICitaDAO;
 import org.buap.hospitalpuebla.model.Cita;
+import org.buap.hospitalpuebla.service.ICitaService;
 
+@Data
 @ManagedBean
 @SessionScoped
 public class CitaController implements Serializable {
 
     @EJB
-    private CitaFacadeLocal citaEJB;
+    private ICitaService citaEJB;
+    
     private Cita cita;
 
     private String especialidad;
@@ -71,7 +75,7 @@ public class CitaController implements Serializable {
 
     }
 
-    public Cita getCita() {
+    /*public Cita getCita() {
         return cita;
     }
 
@@ -79,12 +83,12 @@ public class CitaController implements Serializable {
         this.cita = cita;
     }
 
-    public CitaFacadeLocal getCitaEJB() {
-        return citaEJB;
+    public ICitaDAO getCitaEJB() {
+        return (ICitaDAO) citaEJB;
     }
 
-    public void setCitaEJB(CitaFacadeLocal citaEJB) {
-        this.citaEJB = citaEJB;
+    public void setCitaEJB(ICitaDAO citaEJB) {
+        this.citaEJB = (ICitaService) citaEJB;
     }
 
     public String getEspecialidad() {
@@ -109,6 +113,6 @@ public class CitaController implements Serializable {
 
     public void setCitas(List<Cita> citas) {
         this.citas = citas;
-    }
+    }*/
 
 }

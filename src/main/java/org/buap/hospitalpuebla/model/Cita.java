@@ -10,7 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import lombok.Data;
 
+@Data
 @Entity
 @Table(name = "CITA")
 public class Cita implements Serializable {
@@ -38,7 +40,7 @@ public class Cita implements Serializable {
     @Column(name = "EMAIL")
     private String email;
 
-    public String getNombre() {
+    /*public String getNombre() {
         return nombre;
     }
 
@@ -92,6 +94,6 @@ public class Cita implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
+    }*/
 
 }

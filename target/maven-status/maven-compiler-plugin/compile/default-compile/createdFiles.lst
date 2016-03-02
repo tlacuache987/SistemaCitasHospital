@@ -1,0 +1,6 @@
+org\buap\hospitalpuebla\controller\CitaController.class
+org\buap\hospitalpuebla\model\Cita.class
+org\buap\hospitalpuebla\ejb\CitaFacade.class
+org\buap\hospitalpuebla\model\Cita_.class
+org\buap\hospitalpuebla\ejb\AbstractFacade.class
+org\buap\hospitalpuebla\ejb\CitaFacadeLocal.class

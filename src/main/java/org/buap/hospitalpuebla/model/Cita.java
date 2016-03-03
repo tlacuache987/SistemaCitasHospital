@@ -17,8 +17,12 @@ import lombok.Data;
 @Table(name = "CITA")
 public class Cita implements Serializable {
 
-    @Column(name = "NOMBRE")
     @Id
+    @Column(name = "ID_CITA")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer idCita;
+    
+    @Column(name = "NOMBRE")
     private String nombre;
 
     @Column(name = "APELLIDOPATERNO")
@@ -39,5 +43,8 @@ public class Cita implements Serializable {
 
     @Column(name = "EMAIL")
     private String email;
+    
+    
+    
 
 }

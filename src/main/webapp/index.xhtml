@@ -10,7 +10,7 @@
     <h:body>
         <h1>Agenda tu cita en Hospital de puebla</h1>
 
-        <h:form >
+        <h:form id="frm" >
                         
             <p:panelGrid columns="2">
                 <p:outputLabel value="Nombre" />
@@ -73,7 +73,7 @@
                 </p:column>
 
                 <p:column headerText="MODIFICAR">
-                    <p:commandLink value="Modificar" oncomplete="PF('wdlgDatos').show();" />
+                    <p:commandLink value="Modificar" actionListener="#{citaController.leerID(cita)}" oncomplete="PF('wdlgDatos').show();" update=":dlgDatos" />
                 </p:column>
 
                 <p:column headerText="ELIMINAR">
@@ -86,27 +86,27 @@
             <h:form>
                 <p:panelGrid columns="2">
                     <p:outputLabel  value="Nombre: " />
-                    <p:inputText />
+                    <p:inputText value="#{citaController.cita.nombre}" />
 
                     <p:outputLabel  value="Paterno " />
-                    <p:inputText />
+                    <p:inputText value="#{citaController.cita.apellidoPaterno}" />
 
                     <p:outputLabel  value="Materno " />
-                    <p:inputText />
+                    <p:inputText value="#{citaController.cita.apellidoMaterno}" />
 
                     <p:outputLabel  value="Sexo " />
-                    <p:inputText />
+                    <p:inputText value="#{citaController.cita.sexo}" />
 
                     <p:outputLabel  value="Fecha Cita " />
-                    <p:inputText />
+                    <p:calendar id="datetime" pattern="MM/dd/yyyy HH:mm:ss" value="#{citaController.cita.fechaCita}" />
 
                     <p:outputLabel  value="Doctor " />
-                    <p:inputText />
+                    <p:inputText value="#{citaController.cita.doctor}" />
 
                     <p:outputLabel  value="Email " />
-                    <p:inputText />
+                    <p:inputText value="#{citaController.cita.email}" />
 
-                    <p:commandButton value="Modificar" oncomplete="PF('wdlgDatos').show();"/>
+                    <p:commandButton value="Modificar" actionListener="#{citaController.modificar()}" oncomplete="PF('wdlgDatos').hide();" update="frm:data" />
                     <p:commandButton value="Cancelar" immediate="true" oncomplete="PF('wdlgDatos').hide();" />
                 </p:panelGrid>
             </h:form>

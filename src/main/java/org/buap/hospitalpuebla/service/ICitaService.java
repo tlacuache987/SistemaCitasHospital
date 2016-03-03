@@ -15,4 +15,6 @@ public interface ICitaService {
 
     public Cita find(Cita cita);
     
+    public void edit(Cita cita);
+    
 }

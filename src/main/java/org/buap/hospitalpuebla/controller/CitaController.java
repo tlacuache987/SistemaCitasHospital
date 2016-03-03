@@ -15,11 +15,16 @@ import lombok.Data;
 import org.buap.hospitalpuebla.dao.ICitaDAO;
 import org.buap.hospitalpuebla.model.Cita;
 import org.buap.hospitalpuebla.service.ICitaService;
+import org.apache.log4j.Logger;
 
 @Data
 @ManagedBean
 @SessionScoped
 public class CitaController implements Serializable {
+    
+    // private static final Logger LOG = Logger.getLogger(PersonaBean.class);
+    
+    private static final Logger LOG = Logger.getLogger(CitaController.class);
 
     @EJB
     private ICitaService citaService;
@@ -31,6 +36,8 @@ public class CitaController implements Serializable {
 
     @PostConstruct
     public void init() {
+        org.apache.log4j.BasicConfigurator.configure();
+        LOG.info("::::: Iniciando aplicacion");
         cita = new Cita();
         citas = citaService.findAll();
 
@@ -48,30 +55,59 @@ public class CitaController implements Serializable {
 
     public void registrar() {
         try {
+            LOG.info(":::: Registrando cita ");
             citaService.create(cita);
+            LOG.info(":::: Cita registrada exitosamente: " + cita);
             cita = new Cita();
             citas = citaService.findAll();
         } catch (Exception e) {
-            e.printStackTrace();
+           LOG.error(":::: Fallo al registrar");
+           LOG.error(e.getStackTrace());
         }
     }
 
     public void eliminar(Cita cita) {
         try {
+            LOG.info(":::: Eliminando cita");
             citaService.remove(cita);
+            LOG.info("cita eliminada exitosamente: " + cita);
             cita = new Cita();
             citas = citaService.findAll();
         } catch (Exception e) {
+            LOG.error("Fallo al eliminar");
+            LOG.error(e.getStackTrace());
         }
     }
 
     public void leerID(Cita cita) {
+        LOG.info(":::: Buscando cita");
         Cita citaTemp;
         try {
             citaTemp = citaService.find(cita);
+            if(citaTemp != null){
+            LOG.info("Se encontro cita: " + citaTemp);
+            this.cita = citaTemp;
+            }
         } catch (Exception e) {
+            LOG.error(":::: Fallo al buscar cita");
+            LOG.error(e.getStackTrace());
         }
-
     }
+    
+    public void modificar(){
+        try{
+            LOG.info("::: Modificado cita");
+            citaService.edit(cita);
+            LOG.info("::: Modificada exitosamente");
+            citas = citaService.findAll();
+            
+            
+        }catch(Exception e){
+            LOG.error(":::: Fallo al modificar :::");
+            LOG.error(e.getStackTrace());
+        }
+    }
+    
+    
 
 }

@@ -3,6 +3,7 @@ package org.buap.hospitalpuebla.dao;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.criteria.CriteriaQuery;
+import org.buap.hospitalpuebla.model.Cita;
 
 public abstract class AbstractDAO<T> {
 
@@ -27,7 +28,7 @@ public abstract class AbstractDAO<T> {
     }
 
     public T find(Object id) {
-        return getEntityManager().find(entityClass, id);
+        return getEntityManager().find(entityClass, ((Cita)id).getIdCita());
     }
 
     public List<T> findAll() {

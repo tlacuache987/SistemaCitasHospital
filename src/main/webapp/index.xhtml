@@ -11,7 +11,8 @@
         <h1>Agenda tu cita en Hospital de puebla</h1>
 
         <h:form id="frm" >
-                        
+                
+            <!-- TODO 1 completar value de cada inputText -->
             <p:panelGrid columns="2">
                 <p:outputLabel value="Nombre" />
                 <p:inputText value="#{citaController.cita.nombre}"  />
@@ -41,6 +42,8 @@
                 <p:outputLabel value="email" />
                 <p:inputText value="#{citaController.cita.email}"  />
             </p:panelGrid>
+            
+            <!-- TODO 2 completar actionListener de commandButton -->
             <p:commandButton value="Registrar" actionListener="#{citaController.registrar()}" update="data" />
 
             <p:dataTable id="data" value="#{citaController.citas}" var="cita">

@@ -28,7 +28,7 @@ public abstract class AbstractDAO<T> {
     }
 
     public T find(Object id) {
-        return getEntityManager().find(entityClass, ((Cita)id).getIdCita());
+        return getEntityManager().find(entityClass, ((Cita) id).getIdCita());
     }
 
     public List<T> findAll() {

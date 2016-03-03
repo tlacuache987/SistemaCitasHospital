@@ -10,7 +10,7 @@ import org.buap.hospitalpuebla.service.ICitaService;
 @Stateless
 public class CitaServiceLocal implements ICitaService {
 
-    
+    // TODO 12 inyectar cita DAO
     @EJB
     private ICitaDAO citaDAO;
 
@@ -37,7 +37,7 @@ public class CitaServiceLocal implements ICitaService {
     @Override
     public void edit(Cita cita) {
         citaDAO.edit(cita);
-   
+
     }
 
 }

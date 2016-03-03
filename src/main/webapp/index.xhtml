@@ -11,7 +11,8 @@
         <h1>Agenda tu cita en Hospital de Puebla</h1>
 
         <h:form id="frm" >
-                        
+                
+            <!-- TODO 1 completar value de cada inputText -->
             <p:panelGrid columns="2">
                 <p:outputLabel value="Nombre" />
                 <p:inputText value="#{citaController.cita.nombre}"  />
@@ -41,6 +42,8 @@
                 <p:outputLabel value="email" />
                 <p:inputText value="#{citaController.cita.email}"  />
             </p:panelGrid>
+            
+            <!-- TODO 2 completar actionListener de commandButton -->
             <p:commandButton value="Registrar" actionListener="#{citaController.registrar()}" update="data" />
 
             <p:dataTable id="data" value="#{citaController.citas}" var="cita">
@@ -95,13 +98,19 @@
                     <p:inputText value="#{citaController.cita.apellidoMaterno}" />
 
                     <p:outputLabel  value="Sexo " />
-                    <p:inputText value="#{citaController.cita.sexo}" />
+                <p:selectOneRadio value="#{citaController.cita.sexo}">
+                    <f:selectItem itemLabel="M" itemValue="M" />
+                    <f:selectItem itemLabel="F" itemValue="F"/>
+                </p:selectOneRadio>
 
                     <p:outputLabel  value="Fecha Cita " />
                     <p:calendar id="datetime" pattern="MM/dd/yyyy HH:mm:ss" value="#{citaController.cita.fechaCita}" />
 
                     <p:outputLabel  value="Doctor " />
-                    <p:inputText value="#{citaController.cita.doctor}" />
+                <p:selectOneMenu id="doctor" value="#{citaController.cita.doctor}">
+                    <f:selectItem itemLabel="Seleccione doctor" itemValue="" />
+                    <f:selectItems value="#{citaController.doctores}"  />
+                </p:selectOneMenu>
 
                     <p:outputLabel  value="Email " />
                     <p:inputText value="#{citaController.cita.email}" />

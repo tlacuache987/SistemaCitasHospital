@@ -95,13 +95,19 @@
                     <p:inputText value="#{citaController.cita.apellidoMaterno}" />
 
                     <p:outputLabel  value="Sexo " />
-                    <p:inputText value="#{citaController.cita.sexo}" />
+                <p:selectOneRadio value="#{citaController.cita.sexo}">
+                    <f:selectItem itemLabel="M" itemValue="M" />
+                    <f:selectItem itemLabel="F" itemValue="F"/>
+                </p:selectOneRadio>
 
                     <p:outputLabel  value="Fecha Cita " />
                     <p:calendar id="datetime" pattern="MM/dd/yyyy HH:mm:ss" value="#{citaController.cita.fechaCita}" />
 
                     <p:outputLabel  value="Doctor " />
-                    <p:inputText value="#{citaController.cita.doctor}" />
+                <p:selectOneMenu id="doctor" value="#{citaController.cita.doctor}">
+                    <f:selectItem itemLabel="Seleccione doctor" itemValue="" />
+                    <f:selectItems value="#{citaController.doctores}"  />
+                </p:selectOneMenu>
 
                     <p:outputLabel  value="Email " />
                     <p:inputText value="#{citaController.cita.email}" />

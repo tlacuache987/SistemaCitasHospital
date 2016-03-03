@@ -1,0 +1,2 @@
+			<!-- TODO 2 completar actionListener de commandButton -->
+            <p:commandButton value="Registrar" actionListener="#{citaController.registrar()}" update="data" />

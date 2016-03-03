@@ -1,0 +1,3 @@
+	// TODO 12 inyectar cita DAO
+    @EJB
+    private ICitaDAO citaDAO;

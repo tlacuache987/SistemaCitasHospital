@@ -11,8 +11,6 @@ import org.buap.hospitalpuebla.service.ICitaService;
 public class CitaServiceLocal implements ICitaService {
 
     // TODO 12 inyectar cita DAO
-    @EJB
-    private ICitaDAO citaDAO;
 
     @Override
     public List<Cita> findAll() {

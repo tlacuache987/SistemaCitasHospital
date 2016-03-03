@@ -18,32 +18,5 @@ import lombok.Data;
 public class Cita implements Serializable {
     
     // TODO 0 define modelo Cita
-    
-    @Id
-    @Column(name = "ID_CITA")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCita;
-
-    @Column(name = "NOMBRE")
-    private String nombre;
-
-    @Column(name = "APELLIDOPATERNO")
-    private String apellidoPaterno;
-
-    @Column(name = "APELLIDOMATERNO")
-    private String apellidoMaterno;
-
-    @Column(name = "SEXO")
-    private String sexo;
-
-    @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "FECHA_CITA")
-    private Date fechaCita;
-
-    @Column(name = "DOCTOR")
-    private String doctor;
-
-    @Column(name = "EMAIL")
-    private String email;
 
 }

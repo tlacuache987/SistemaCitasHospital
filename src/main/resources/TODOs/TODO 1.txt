@@ -1,0 +1,10 @@
+				<p:outputLabel value="Nombre" />
+                <p:inputText value="#{citaController.cita.nombre}"  />
+
+                <p:outputLabel value="Apellido Paterno" />
+                <p:inputText value="#{citaController.cita.apellidoPaterno}"  />
+
+                <p:outputLabel value="Apellido Materno" />
+                <p:inputText value="#{citaController.cita.apellidoMaterno}"  />
+
+                

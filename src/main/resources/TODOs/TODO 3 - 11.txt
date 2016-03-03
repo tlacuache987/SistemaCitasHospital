@@ -1,0 +1,35 @@
+	// TODO 3 Inyectar cita service
+    @EJB
+    private ICitaService citaService;
+	
+	
+		// TODO 4 obtener todas las citas
+        this.citas = citaService.findAll();
+		
+		
+		// TODO 5 crear una nueva cita
+        this.citaService.create(cita);
+		
+		
+		// TODO 6 obtener todas las citas
+        this.citas = citaService.findAll();
+		
+		
+		// TODO 7 remover la cita seleccionada
+        this.citaService.remove(cita);
+		
+		
+		// TODO 8 obtener todas las citas
+		this.citas = citaService.findAll();
+		
+		
+		// TODO 9 buscar cita
+		this.cita = citaService.find(cita);
+		
+		
+		// TODO 10 editar cita
+		citaService.edit(cita);
+		
+		
+		// TODO 11 obtener todas las citas	
+		citas = citaService.findAll();

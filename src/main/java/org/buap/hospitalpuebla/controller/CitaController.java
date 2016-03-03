@@ -25,8 +25,6 @@ public class CitaController implements Serializable {
     private static final Logger LOG = Logger.getLogger(CitaController.class);
 
     // TODO 3 Inyectar cita service
-    @EJB
-    private ICitaService citaService;
 
     private Cita cita;
     private String especialidad;
@@ -42,7 +40,6 @@ public class CitaController implements Serializable {
         this.cita = new Cita();
 
         // TODO 4 obtener todas las citas
-        this.citas = citaService.findAll();
 
         final SelectItemGroup cardeologia = new SelectItemGroup("Cardiologia");
         cardeologia.setSelectItems(new SelectItem[]{new SelectItem("Dr Gonzalez", "Dr. Gonzalez"), new SelectItem("Dr. Castillo", "Dr. Castillo")});
@@ -61,14 +58,12 @@ public class CitaController implements Serializable {
             LOG.info(":::: Registrando cita ");
 
             // TODO 5 crear una nueva cita
-            this.citaService.create(cita);
 
             LOG.info(":::: Cita registrada exitosamente: " + cita);
 
             this.cita = new Cita();
 
             // TODO 6 obtener todas las citas
-            this.citas = citaService.findAll();
 
         } catch (Exception e) {
             LOG.error(":::: Fallo al registrar");
@@ -81,14 +76,12 @@ public class CitaController implements Serializable {
             LOG.info(":::: Eliminando cita");
 
             // TODO 7 remover la cita seleccionada
-            this.citaService.remove(cita);
 
             LOG.info("cita eliminada exitosamente: " + cita);
 
             this.cita = new Cita();
 
             // TODO 8 obtener todas las citas
-            this.citas = citaService.findAll();
 
         } catch (Exception e) {
             LOG.error("Fallo al eliminar");
@@ -103,7 +96,7 @@ public class CitaController implements Serializable {
             //Cita citaTemp;
             
             // TODO 9 buscar cita
-            this.cita = citaService.find(cita);
+            
             if (this.cita != null) {
                 LOG.info("Se encontro cita: " + this.cita);
 
@@ -120,12 +113,10 @@ public class CitaController implements Serializable {
             LOG.info("::: Modificado cita");
             
             // TODO 10 editar cita
-            citaService.edit(cita);
             
             LOG.info("::: Modificada exitosamente");
             
             // TODO 11 obtener todas las citas
-            citas = citaService.findAll();
 
         } catch (Exception e) {
             LOG.error(":::: Fallo al modificar :::");
